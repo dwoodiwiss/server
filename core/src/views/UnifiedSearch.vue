@@ -101,6 +101,7 @@ import { minSearchLength, getTypes, search, defaultLimit } from '../services/Uni
 import EmptyContent from '@nextcloud/vue/dist/Components/EmptyContent'
 import Magnify from 'vue-material-design-icons/Magnify'
 import debounce from 'debounce'
+import { emit } from '@nextcloud/event-bus'
 
 import HeaderMenu from '../components/HeaderMenu'
 import SearchResult from '../components/UnifiedSearch/SearchResult'
@@ -243,6 +244,8 @@ export default {
 		onClose() {
 			this.resetState()
 			this.query = ''
+			// emit the search query
+			emit('nextcloud:unified-search.update', { query: this.query })
 		},
 
 		resetState() {
@@ -281,6 +284,9 @@ export default {
 		 * Start searching on input
 		 */
 		async onInput() {
+			// emit the search query
+			emit('nextcloud:unified-search.update', { query: this.query })
+
 			// Do not search if not long enough
 			if (this.query.trim() === '' || this.isShortQuery) {
 				return
