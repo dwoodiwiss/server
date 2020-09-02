@@ -1,0 +1,29 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  SNYK-JS-ECSTATIC-540354:
+    - ecstatic:
+        reason: no fix available - will need to review with team
+        expires: '2020-10-02T12:09:53.513Z'
+    - http-server > ecstatic:
+        reason: no fix available - will need to review with team
+        expires: '2020-10-02T12:09:53.513Z'
+    - jcrop > http-server > ecstatic:
+        reason: no fix available - will need to review with team
+        expires: '2020-10-02T12:09:53.513Z'
+  SNYK-JS-MINIMIST-559764:
+    - http-server > optimist > minimist:
+        reason: no fix available - will need to review with team
+        expires: '2020-10-02T12:09:53.513Z'
+    - jcrop > http-server > optimist > minimist:
+        reason: no fix available - will need to review with team
+        expires: '2020-10-02T12:09:53.513Z'
+  'npm:qs:20170213':
+    - http-server > union > qs:
+        reason: no fix available - will need to review with team
+        expires: '2020-10-02T12:09:53.514Z'
+    - jcrop > http-server > union > qs:
+        reason: no fix available - will need to review with team
+        expires: '2020-10-02T12:09:53.514Z'
+patch: {}
