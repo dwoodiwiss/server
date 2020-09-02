@@ -68,7 +68,7 @@
     "p-queue": "^6.6.1",
     "query-string": "^5.1.1",
     "regenerator-runtime": "^0.13.7",
-    "select2": "^4.0.8",
+    "select2": "^4.0.13",
     "snap.js": "^2.0.9",
     "strengthify": "git+https://github.com/MorrisJobke/strengthify.git#0.5.9",
     "underscore": "^1.11.0",
